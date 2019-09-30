@@ -1,8 +1,10 @@
-public class Subtracao implements Expressao {
+package interpreter;
+
+public class Soma implements Expressao{
     private Expressao esquerda;
     private Expressao direita;
 
-    public Subtracao(Expressao esquerda, Expressao direita){
+    public Soma(Expressao esquerda, Expressao direita){
         this.esquerda = esquerda;
         this.direita = direita;
     }
@@ -11,6 +13,6 @@ public class Subtracao implements Expressao {
     public int avalia() {
         int valorEsquerda = this.esquerda.avalia();
         int valorDireita =  this.direita.avalia();
-        return valorEsquerda - valorDireita;
+        return valorEsquerda + valorDireita;
     }
 }

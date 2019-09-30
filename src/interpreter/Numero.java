@@ -1,3 +1,5 @@
+package interpreter;
+
 public class Numero implements Expressao{
     private int numero;
 

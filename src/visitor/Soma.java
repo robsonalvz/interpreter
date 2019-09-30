@@ -1,4 +1,6 @@
-public class Soma implements Expressao{
+package visitor;
+
+public class Soma implements Expressao {
     private Expressao esquerda;
     private Expressao direita;
 
@@ -12,5 +14,18 @@ public class Soma implements Expressao{
         int valorEsquerda = this.esquerda.avalia();
         int valorDireita =  this.direita.avalia();
         return valorEsquerda + valorDireita;
+    }
+
+    @Override
+    public void aceita(ImpressoraVisitor impressoraVisitor) {
+        impressoraVisitor.visitaSoma(this);
+    }
+
+    public Expressao getEsquerda() {
+        return esquerda;
+    }
+
+    public Expressao getDireita() {
+        return direita;
     }
 }
